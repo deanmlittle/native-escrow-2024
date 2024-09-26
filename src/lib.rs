@@ -8,8 +8,8 @@ use state::*;
 mod tests;
 
 mod make;
-mod take;
 mod refund;
+mod take;
 
 use solana_program::{
     account_info::AccountInfo, entrypoint, entrypoint::ProgramResult, program_error::ProgramError,
@@ -36,6 +36,6 @@ pub fn process_instruction(
     match EscrowInstructions::try_from(discriminator)? {
         EscrowInstructions::Make => make::process(accounts, data),
         EscrowInstructions::Take => take::process(accounts),
-        EscrowInstructions::Refund => refund::process(accounts)
+        EscrowInstructions::Refund => refund::process(accounts),
     }
 }

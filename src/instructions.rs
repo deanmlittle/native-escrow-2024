@@ -3,7 +3,7 @@ use solana_program::program_error::ProgramError;
 pub enum EscrowInstructions {
     Make,
     Take,
-    Refund
+    Refund,
 }
 
 impl TryFrom<&u8> for EscrowInstructions {
@@ -22,7 +22,7 @@ impl TryFrom<&u8> for EscrowInstructions {
 #[repr(C)]
 #[derive(Clone, Copy, PartialEq, Eq, Pod, Zeroable)]
 pub struct Make {
-    pub seed: u64, 
-    pub amount: u64, 
-    pub receive: u64
+    pub seed: u64,
+    pub amount: u64,
+    pub receive: u64,
 }
