@@ -572,7 +572,5 @@ fn take() {
         ],
     );
 
-    println!("{:#?}", result);
-
     assert!(matches!(result.program_result, ProgramResult::Success))
 }
