@@ -13,7 +13,7 @@ use spl_token::instruction::transfer_checked;
 
 use crate::{Escrow, Make};
 
-/// Deposit funds into vault with deterministic address derived from Signer's pubkey
+/// Deposit funds into vault derived from Makers's pubkey and seed
 pub fn process(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult {
     let Make {
         seed,

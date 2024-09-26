@@ -6,7 +6,7 @@ use spl_token::instruction::{close_account, transfer_checked};
 
 use crate::Escrow;
 
-/// Deposit funds into vault with deterministic address derived from Signer's pubkey
+/// Refund funds in vault to Maker's token account
 pub fn process(accounts: &[AccountInfo<'_>]) -> ProgramResult {
     let [maker, mint_a, maker_ta_a, escrow, vault, token_program, _system_program] = accounts
     else {

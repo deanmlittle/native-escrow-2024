@@ -10,7 +10,7 @@ use spl_token::instruction::{close_account, transfer_checked};
 
 use crate::Escrow;
 
-/// Deposit funds into vault with deterministic address derived from Signer's pubkey
+/// Taker pays funds to Maker and claims funds in Vault
 pub fn process(accounts: &[AccountInfo<'_>]) -> ProgramResult {
     let [taker, maker, mint_a, mint_b, taker_ta_a, taker_ta_b, maker_ta_b, escrow, vault, token_program, _system_program] =
         accounts
