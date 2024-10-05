@@ -10,6 +10,7 @@ mod tests;
 mod make;
 mod refund;
 mod take;
+mod utils;
 
 use solana_program::{
     account_info::AccountInfo, entrypoint, entrypoint::ProgramResult, program_error::ProgramError,

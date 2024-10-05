@@ -26,3 +26,13 @@ pub struct Make {
     pub amount: u64,
     pub receive: u64,
 }
+
+impl TryFrom<&[u8]> for Make {
+    
+    type Error = ProgramError;
+    
+    fn try_from(data: &[u8]) -> Result<Self, Self::Error> {
+        bytemuck::try_pod_read_unaligned::<Self>(data)
+            .map_err(|_| ProgramError::InvalidInstructionData)
+    }
+}
