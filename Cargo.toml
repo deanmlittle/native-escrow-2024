@@ -1,6 +1,6 @@
 [package]
 name = "native-escrow-2024"
-authors = ["Dean Little <@deanmlittle>"]
+authors = ["Dean Little <@deanmlittle>, Leonardo Donatacci <@L0STE>"]
 license = "MIT"
 version = "0.1.0"
 edition = "2021"
